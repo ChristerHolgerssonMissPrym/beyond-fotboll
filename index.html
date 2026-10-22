@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Fotboll – Futsal Cup 20 december</title>
+<meta name="description" content="Futsal Cup med Beyond Fotboll UF den 20 december. Samla laget, anmäl er senast 13 december och spela om 10 flak Nocco.">
+<meta name="theme-color" content="#0b0d12">
+<meta property="og:title" content="Beyond Fotboll – Futsal Cup 20 december">
+<meta property="og:description" content="Samla laget och anmäl er senast 13/12. Förstapris: 10 flak Nocco.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d12;
+    --bg-2:#12151d;
+    --card:#161a24;
+    --line:#262b38;
+    --text:#f3f1ec;
+    --muted:#a7abb6;
+    --gold:#c9a96a;
+    --gold-2:#e2c88f;
+    --blue:#2f5fd0;
+    --ok:#4cc38a;
+    --err:#ff6b6b;
+    --radius:14px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--gold-2)}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin:0}
+  .eyebrow{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-size:.85rem;font-weight:600}
+
+  /* Nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(11,13,18,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:Oswald,sans-serif;text-transform:uppercase;font-weight:600;letter-spacing:.06em}
+  .brand img{width:36px;height:36px}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a.btn,.nav-links a.btn:hover{color:#111}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font:600 1rem/1 Oswald,sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:14px 22px;border-radius:999px;transition:transform .15s ease,background .15s ease}
+  .btn-gold{background:var(--gold);color:#111}
+  .btn-gold:hover{background:var(--gold-2);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.25)}
+  .btn-ghost:hover{border-color:var(--gold)}
+  .nav .btn{padding:10px 16px;font-size:.9rem}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:72px 0 88px;background:
+      radial-gradient(900px 500px at 85% 10%, rgba(47,95,208,.28), transparent 60%),
+      radial-gradient(700px 500px at 0% 100%, rgba(201,169,106,.14), transparent 60%),
+      var(--bg)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(3.2rem,9vw,6.4rem);color:var(--gold);margin:14px 0 6px}
+  .hero .date{font-family:Oswald,sans-serif;font-size:clamp(1.4rem,3.2vw,2rem);text-transform:uppercase;letter-spacing:.04em}
+  .hero p.lead{color:var(--muted);font-size:1.1rem;max-width:34ch;margin:18px 0 28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .poster{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);transform:rotate(2deg);border:1px solid rgba(255,255,255,.08)}
+  .poster img{width:100%;height:auto}
+  .bf-strip{position:absolute;left:0;right:0;bottom:0;white-space:nowrap;overflow:hidden;font-family:Oswald,sans-serif;font-style:italic;color:rgba(201,169,106,.13);font-size:5rem;line-height:1;pointer-events:none;user-select:none}
+
+  .countdown{display:flex;gap:10px;margin-top:34px}
+  .cd{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:74px;text-align:center}
+  .cd b{display:block;font:600 1.8rem/1 Oswald,sans-serif}
+  .cd span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .cd-label{font-size:.85rem;color:var(--muted);margin-top:10px}
+
+  /* Sections */
+  section{padding:84px 0}
+  .section-head{max-width:640px;margin-bottom:36px}
+  .section-head h2{font-size:clamp(2rem,5vw,3rem);margin-top:8px}
+  .section-head p{color:var(--muted);margin:12px 0 0}
+
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .fact .ico{width:40px;height:40px;border-radius:10px;background:rgba(201,169,106,.12);display:grid;place-items:center;margin-bottom:14px}
+  .fact .ico svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fact h3{font-size:1rem;color:var(--muted);letter-spacing:.08em;font-weight:500}
+  .fact .v{font:600 1.5rem/1.15 Oswald,sans-serif;text-transform:uppercase;margin-top:6px}
+  .fact small{display:block;color:var(--muted);margin-top:6px;font-size:.88rem}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{position:relative;padding:22px 22px 22px 22px;border-top:2px solid var(--gold);background:linear-gradient(180deg,rgba(201,169,106,.06),transparent 70%)}
+  .step::before{counter-increment:s;content:"0" counter(s);font:700 2.4rem/1 Oswald,sans-serif;color:var(--gold);opacity:.9;display:block;margin-bottom:10px}
+  .step h3{font-size:1.2rem;margin-bottom:6px}
+  .step p{color:var(--muted);margin:0;font-size:.95rem}
+
+  /* Signup */
+  .signup{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .signup .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .signup aside ul{list-style:none;padding:0;margin:24px 0 0}
+  .signup aside li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+  .signup aside li b{color:var(--text);font-weight:600}
+  .signup aside li svg{flex:none;width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2;margin-top:3px}
+  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:18px}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  label .opt{color:var(--muted);font-weight:400}
+  input,textarea{width:100%;background:#0e1118;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font:inherit;transition:border-color .15s, box-shadow .15s}
+  input::placeholder,textarea::placeholder{color:#6d7280}
+  input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,106,.18)}
+  textarea{min-height:96px;resize:vertical}
+  .hint{font-size:.82rem;color:var(--muted);margin-top:6px}
+  .stepper{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0e1118}
+  .stepper button{width:48px;border:0;background:transparent;color:var(--text);font-size:1.3rem;cursor:pointer}
+  .stepper button:hover{background:rgba(255,255,255,.05)}
+  .stepper input{border:0;border-radius:0;text-align:center;font:600 1.2rem Oswald,sans-serif;-moz-appearance:textfield}
+  .stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted);margin:4px 0 22px}
+  .consent input{width:18px;height:18px;margin-top:3px;accent-color:var(--gold)}
+  .submit{width:100%}
+  .submit[disabled]{opacity:.6;cursor:wait}
+  .status{margin-top:16px;padding:14px 16px;border-radius:10px;font-size:.95rem;display:none}
+  .status.ok{display:block;background:rgba(76,195,138,.12);border:1px solid rgba(76,195,138,.4)}
+  .status.err{display:block;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.4)}
+  .hp{position:absolute;left:-9999px}
+
+  /* FAQ */
+  .faq{max-width:780px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--gold);font:600 1.4rem/1 Oswald,sans-serif}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin:10px 0 0}
+
+  footer{padding:48px 0;color:var(--muted);font-size:.92rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+  footer .brand img{width:44px;height:44px}
+  .ig{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none}
+  .ig svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+  @media (max-width:900px){
+    .hero .wrap,.signup .wrap{grid-template-columns:1fr;gap:40px}
+    .poster{max-width:420px;margin:0 auto;transform:none}
+    .facts,.steps{grid-template-columns:1fr 1fr}
+    .nav-links a:not(.btn){display:none}
+  }
+  @media (max-width:560px){
+    section{padding:64px 0}
+    .hero{padding:44px 0 64px}
+    .facts,.steps,.row{grid-template-columns:1fr}
+    form{padding:20px}
+    .cd{min-width:0;flex:1;padding:10px 6px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="">Beyond Fotboll</a>
+    <nav class="nav-links">
+      <a href="#info">Info</a>
+      <a href="#sa-funkar-det">Så funkar det</a>
+      <a href="#fragor">Frågor</a>
+      <a class="btn btn-gold" href="#anmalan">Anmäl lag</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Beyond Fotboll UF presenterar</span>
+        <h1>Futsal Cup</h1>
+        <div class="date">Lördag 20 december · Jullovet</div>
+        <p class="lead">Samla laget, utmana andra lag och spela en hel dag med futsal, tävling och grym stämning. Förstapriset? Tio flak Nocco.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#anmalan">Anmäl ert lag</a>
+          <a class="btn btn-ghost" href="#info">Läs mer</a>
+        </div>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="cd"><b id="cd-d">–</b><span>dagar</span></div>
+          <div class="cd"><b id="cd-h">–</b><span>tim</span></div>
+          <div class="cd"><b id="cd-m">–</b><span>min</span></div>
+        </div>
+        <div class="cd-label" id="cd-label">kvar tills anmälan stänger 13 december</div>
+      </div>
+      <div class="poster">
+        <img src="assets/futsal-cup-affisch.jpg" width="980" height="1226" alt="Affisch för Futsal Cup: anmälan öppen till och med 13/12, cupen spelas 20/12, 150 kr per person, förstapris 10 flak Nocco.">
+      </div>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Turneringen</span>
+        <h2>Det här gäller</h2>
+        <p>Mer information om priser och samarbeten kommer snart, men räkna med något storslaget.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h3>Datum</h3>
+          <div class="v">20 december</div>
+          <small>Anmälan öppen t.o.m. 13 december</small>
+        </div>
+        <div class="fact">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+          <h3>Plats</h3>
+          <div class="v">Hallen meddelas snart</div>
+          <small>Följ oss på Instagram för besked</small>
+        </div>
+        <div class="fact">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+          <h3>Anmälningsavgift</h3>
+          <div class="v">150 kr / person</div>
+          <small>Betalningsinfo skickas efter anmälan</small>
+        </div>
+        <div class="fact">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+          <h3>Förstapris</h3>
+          <div class="v">10 flak Nocco</div>
+          <small>Fler priser presenteras inom kort</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sa-funkar-det" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Så funkar det</span>
+        <h2>Fyra steg till planen</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Samla laget</h3><p>Hitta dina lagkamrater. En förening kan anmäla flera lag.</p></div>
+        <div class="step"><h3>Anmäl er</h3><p>Fyll i formuläret nedan senast 13 december.</p></div>
+        <div class="step"><h3>Vi hör av oss</h3><p>Vi kontaktar er via mejl eller telefon med betalning och detaljer.</p></div>
+        <div class="step"><h3>Spela 20/12</h3><p>Dags för matcher, tävling och grym stämning i hallen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup" id="anmalan">
+    <div class="wrap">
+      <aside>
+        <span class="eyebrow">Anmälan</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Anmäl ert lag</h2>
+          <p>Skriv lagets eller föreningens namn och hur många lag ni vill ställa upp med. Vi återkommer med bekräftelse och betalningsinformation.</p>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Exempel:</b> ÖIS pojkar 2015, 2 lag</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Sista anmälningsdag:</b> 13 december</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Frågor?</b> Skicka ett DM till <a href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">@beyond.fotboll.uf</a></span></li>
+        </ul>
+      </aside>
+
+      <form id="signup-form" action="https://formsubmit.co/beyondfootball@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Ny anmälan – Beyond Fotboll Futsal Cup">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="field">
+          <label for="lagnamn">Lagnamn / förening</label>
+          <input id="lagnamn" name="Lagnamn" type="text" required placeholder="T.ex. ÖIS pojkar 2015" autocomplete="organization">
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="antal">Antal lag</label>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="Färre lag">−</button>
+              <input id="antal" name="Antal lag" type="number" inputmode="numeric" min="1" max="20" value="1" required>
+              <button type="button" data-step="1" aria-label="Fler lag">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="kontakt">Kontaktperson <span class="opt">(valfritt)</span></label>
+            <input id="kontakt" name="Kontaktperson" type="text" placeholder="För- och efternamn" autocomplete="name">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="email">Mejl</label>
+            <input id="email" name="email" type="email" required placeholder="namn@exempel.se" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="Telefon" type="tel" required placeholder="070-123 45 67" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="meddelande">Övrigt <span class="opt">(valfritt)</span></label>
+          <textarea id="meddelande" name="Meddelande" placeholder="T.ex. åldersgrupp, önskemål eller frågor"></textarea>
+        </div>
+
+        <label class="consent"><input type="checkbox" id="gdpr" required> <span>Jag godkänner att Beyond Fotboll UF sparar uppgifterna för att kunna kontakta oss om turneringen.</span></label>
+
+        <button class="btn btn-gold submit" type="submit">Skicka anmälan</button>
+        <div class="status" id="status" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="fragor">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Frågor &amp; svar</span>
+        <h2>Bra att veta</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Kan vi anmäla flera lag?</summary>
+          <p>Ja. Ange hur många lag ni vill ställa upp med i formuläret, till exempel “ÖIS pojkar 2015, 2 lag”.</p>
+        </details>
+        <details>
+          <summary>Hur betalar vi?</summary>
+          <p>Anmälningsavgiften är 150 kr per person. Efter anmälan kontaktar vi er med betalningsinformation.</p>
+        </details>
+        <details>
+          <summary>Var spelas cupen?</summary>
+          <p>Hallen presenteras inom kort. Följ oss på Instagram så missar ni inget.</p>
+        </details>
+        <details>
+          <summary>Vad kan man vinna?</summary>
+          <p>Förstapriset är 10 flak Nocco. Mer information om priser och samarbeten kommer snart.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="">Beyond Fotboll UF</a>
+    <a class="ig" href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+      @beyond.fotboll.uf
+    </a>
+    <span>© <span id="year">2026</span> Beyond Fotboll UF</span>
+  </div>
+</footer>
+
+<script>
+  // Nedräkning till sista anmälningsdag (13 december, 23:59 svensk tid)
+  (function(){
+    var now = new Date();
+    var y = now.getMonth() === 11 && now.getDate() > 20 ? now.getFullYear() + 1 : now.getFullYear();
+    var deadline = new Date(y + '-12-13T23:59:00+01:00');
+    var cupDay = new Date(y + '-12-20T23:59:00+01:00');
+    document.getElementById('year').textContent = now.getFullYear();
+    function tick(){
+      var diff = deadline - new Date();
+      var label = document.getElementById('cd-label');
+      if (diff <= 0) {
+        document.getElementById('countdown').style.display = 'none';
+        label.textContent = new Date() < cupDay ? 'Anmälan är stängd – vi ses 20 december!' : 'Tack för i år!';
+        return;
+      }
+      var d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4);
+      document.getElementById('cd-d').textContent = d;
+      document.getElementById('cd-h').textContent = h;
+      document.getElementById('cd-m').textContent = m;
+    }
+    tick(); setInterval(tick, 30000);
+  })();
+
+  // Antal lag +/-
+  document.querySelectorAll('[data-step]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = document.getElementById('antal');
+      var v = (parseInt(i.value, 10) || 1) + parseInt(b.dataset.step, 10);
+      i.value = Math.min(20, Math.max(1, v));
+    });
+  });
+
+  // Skicka anmälan
+  (function(){
+    var form = document.getElementById('signup-form');
+    var status = document.getElementById('status');
+    var btn = form.querySelector('.submit');
+    function show(type, msg){ status.className = 'status ' + type; status.textContent = msg; }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        var bad = form.querySelector(':invalid');
+        show('err', bad && bad.id === 'gdpr' ? 'Kryssa i rutan för att godkänna att vi sparar uppgifterna.' : 'Fyll i lagnamn, antal lag, mejl och telefon.');
+        if (bad) bad.focus();
+        return;
+      }
+      btn.disabled = true; btn.textContent = 'Skickar…';
+      var data = Object.fromEntries(new FormData(form).entries());
+      data._replyto = data.email;
+      fetch('https://formsubmit.co/ajax/beyondfootball@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+      .then(function(res){
+        if (!res.ok || String(res.j.success) === 'false') throw new Error(res.j.message || 'fel');
+        form.reset();
+        document.getElementById('antal').value = 1;
+        show('ok', 'Tack! Anmälan för ' + data['Lagnamn'] + ' (' + data['Antal lag'] + ' lag) är skickad. Vi hör av oss till ' + data.email + ' inom kort.');
+      })
+      .catch(function(){
+        show('err', 'Något gick fel när anmälan skulle skickas. Försök igen, eller skicka ett DM till @beyond.fotboll.uf.');
+      })
+      .finally(function(){ btn.disabled = false; btn.textContent = 'Skicka anmälan'; });
+    });
+  })();
+</script>
+</body>
+</html>
