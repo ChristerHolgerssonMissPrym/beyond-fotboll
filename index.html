@@ -266,6 +266,7 @@
       <form id="signup-form" action="https://formsubmit.co/beyondfotboll@gmail.com" method="POST" novalidate>
         <input type="hidden" name="_subject" value="Ny anmälan – Beyond Fotboll Futsal Cup">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://christerholgerssonmissprym.github.io/beyond-fotboll/?tack=1#anmalan">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="field">
@@ -421,11 +422,23 @@
         document.getElementById('antal').value = 1;
         show('ok', 'Tack! Anmälan för ' + data['Lagnamn'] + ' (' + data['Antal lag'] + ' lag) är skickad. Vi hör av oss till ' + data.email + ' inom kort.');
       })
-      .catch(function(){
-        show('err', 'Något gick fel när anmälan skulle skickas. Försök igen, eller mejla beyondfotboll@gmail.com.');
+      .catch(function(err){
+        // AJAX nekad (t.ex. formuläret ej aktiverat eller blockerat av tillägg):
+        // skicka som vanligt formulär i stället, FormSubmit skickar tillbaka besökaren hit.
+        console.error('Anmälan via AJAX misslyckades:', err && err.message);
+        show('ok', 'Skickar anmälan…');
+        fallback = true;
+        HTMLFormElement.prototype.submit.call(form);
       })
-      .finally(function(){ btn.disabled = false; btn.textContent = 'Skicka anmälan'; });
+      .finally(function(){ if (!fallback) { btn.disabled = false; btn.textContent = 'Skicka anmälan'; } });
     });
+    var fallback = false;
+
+    // Tillbaka från FormSubmit efter vanlig formulärpost
+    if (/[?&]tack=1/.test(location.search)) {
+      show('ok', 'Tack! Er anmälan är skickad. Vi hör av oss inom kort.');
+      document.getElementById('anmalan').scrollIntoView();
+    }
   })();
 </script>
 </body>
