@@ -1,6 +1,6 @@
 # Beyond Fotboll – Futsal Cup
 
-Hemsida för Beyond Fotboll UF:s futsalturnering (20 december). Statisk sida (en `index.html` + `assets/`) som publiceras med GitHub Pages.
+Hemsida för Beyond Fotboll UF:s futsalturnering (10 januari 2027). Statisk sida (en `index.html` + `assets/`) som publiceras med GitHub Pages.
 
 ## Anmälan
 Formuläret skickas via [FormSubmit](https://formsubmit.co) till **beyondfotboll@gmail.com**. Ingen server behövs.
