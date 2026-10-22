@@ -259,7 +259,7 @@
         <ul>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Exempel:</b> ÖIS pojkar 2015, 2 lag</span></li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Sista anmälningsdag:</b> 13 december</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Frågor?</b> Skicka ett DM till <a href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">@beyond.fotboll.uf</a></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Frågor?</b> Mejla <a href="mailto:beyondfotboll@gmail.com">beyondfotboll@gmail.com</a> eller skicka ett DM till <a href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">@beyond.fotboll.uf</a></span></li>
         </ul>
       </aside>
 
@@ -332,6 +332,10 @@
           <p>Hallen presenteras inom kort. Följ oss på Instagram så missar ni inget.</p>
         </details>
         <details>
+          <summary>Hur når vi er?</summary>
+          <p>Mejla <a href="mailto:beyondfotboll@gmail.com">beyondfotboll@gmail.com</a> eller skicka ett DM till <a href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">@beyond.fotboll.uf</a> på Instagram.</p>
+        </details>
+        <details>
           <summary>Vad kan man vinna?</summary>
           <p>Förstapriset är 10 flak Nocco. Mer information om priser och samarbeten kommer snart.</p>
         </details>
@@ -346,6 +350,10 @@
     <a class="ig" href="https://www.instagram.com/beyond.fotboll.uf/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
       @beyond.fotboll.uf
+    </a>
+    <a class="ig" href="mailto:beyondfotboll@gmail.com">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      beyondfotboll@gmail.com
     </a>
     <span>© <span id="year">2026</span> Beyond Fotboll UF</span>
   </div>
@@ -415,7 +423,7 @@
         show('ok', 'Tack! Anmälan för ' + data['Lagnamn'] + ' (' + data['Antal lag'] + ' lag) är skickad. Vi hör av oss till ' + data.email + ' inom kort.');
       })
       .catch(function(){
-        show('err', 'Något gick fel när anmälan skulle skickas. Försök igen, eller skicka ett DM till @beyond.fotboll.uf.');
+        show('err', 'Något gick fel när anmälan skulle skickas. Försök igen, eller mejla beyondfotboll@gmail.com.');
       })
       .finally(function(){ btn.disabled = false; btn.textContent = 'Skicka anmälan'; });
     });
