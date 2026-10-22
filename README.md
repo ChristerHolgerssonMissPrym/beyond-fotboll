@@ -3,7 +3,7 @@
 Hemsida för Beyond Fotboll UF:s futsalturnering (20 december). Statisk sida (en `index.html` + `assets/`) som publiceras med GitHub Pages.
 
 ## Anmälan
-Formuläret skickas via [FormSubmit](https://formsubmit.co) till **beyondfootball@gmail.com**. Ingen server behövs.
+Formuläret skickas via [FormSubmit](https://formsubmit.co) till **beyondfotboll@gmail.com**. Ingen server behövs.
 
 **Första gången** någon skickar en anmälan får gmail-kontot ett aktiveringsmejl från FormSubmit. Klicka på länken i det mejlet, annars kommer inga anmälningar fram. Skicka gärna en testanmälan direkt efter publicering.
 
